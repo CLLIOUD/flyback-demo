@@ -25,20 +25,55 @@ Service Worker + Web Push 알림 등록
         ↓
 타 지방공항 입국 전용 데모 프로모션 코드 확인
 ```
-
 ## Demo 화면
 
-| 메인 이벤트 화면 | 모바일 엽서 제작 |
-| --- | --- |
-|<img width="2538" height="1419" alt="image" src="https://github.com/user-attachments/assets/e47b5878-72a7-4eb7-8cd7-46d5794474e7" />|
-|<img width="603" height="1311" alt="IMG_5403" src="https://github.com/user-attachments/assets/bc76c28e-dab4-47b6-8321-451604773bf0" />|
+<table>
+  <tr>
+    <th width="50%">메인 이벤트 화면</th>
+    <th width="50%">모바일 엽서 제작</th>
+  </tr>
+  <tr>
+    <td align="center" valign="top">
+      <img
+        src="https://github.com/user-attachments/assets/e47b5878-72a7-4eb7-8cd7-46d5794474e7"
+        alt="메인 이벤트 화면"
+        width="100%"
+      />
+    </td>
+    <td align="center" valign="top">
+      <img
+        src="https://github.com/user-attachments/assets/bc76c28e-dab4-47b6-8321-451604773bf0"
+        alt="모바일 엽서 제작 화면"
+        width="48%"
+      />
+    </td>
+  </tr>
+</table>
 
-| Web Push 알림 | 재방문 프로모션 화면 |
-| --- | --- |
-|<img width="603" height="174" alt="IMG_5386" src="https://github.com/user-attachments/assets/99798a3e-fb53-4664-a7e9-5d02e76c8d9c" />|
-|<img width="603" height="1311" alt="IMG_5401" src="https://github.com/user-attachments/assets/58a2d245-9806-4228-b719-dd26ccd3aeed" />|
+<br>
 
-> 이미지 파일은 추후 `docs/` 디렉터리에 추가할 수 있도록 경로만 지정되어 있습니다.
+<table>
+  <tr>
+    <th width="50%">Web Push 알림</th>
+    <th width="50%">재방문 프로모션 화면</th>
+  </tr>
+  <tr>
+    <td align="center" valign="top">
+      <img
+        src="https://github.com/user-attachments/assets/99798a3e-fb53-4664-a7e9-5d02e76c8d9c"
+        alt="Web Push 알림"
+        width="85%"
+      />
+    </td>
+    <td align="center" valign="top">
+      <img
+        src="https://github.com/user-attachments/assets/58a2d245-9806-4228-b719-dd26ccd3aeed"
+        alt="재방문 프로모션 화면"
+        width="48%"
+      />
+    </td>
+  </tr>
+</table>
 
 ## Key Features
 
