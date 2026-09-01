@@ -30,7 +30,8 @@ Service Worker + Web Push 알림 등록
 
 | 메인 이벤트 화면 | 모바일 엽서 제작 |
 | --- | --- |
-| ![PC 메인 이벤트 화면](docs/main.png) | ![모바일 디지털 엽서 화면](docs/postcard.png) |
+|<img width="2538" height="1419" alt="image" src="https://github.com/user-attachments/assets/e47b5878-72a7-4eb7-8cd7-46d5794474e7" />
+| ![모바일 디지털 엽서 화면](docs/postcard.png) |
 
 | Web Push 알림 | 재방문 프로모션 화면 |
 | --- | --- |
