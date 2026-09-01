@@ -93,6 +93,17 @@ form.addEventListener("submit", (event) => {
     cardMessage.textContent = messageInput.value;
     postcardResult.hidden = false;
     postcardResult.scrollIntoView({ behavior: "smooth", block: "start" });
+
+    window.FlybackDB.saveLatestPostcard({
+        airport: airportInput.value,
+        message: messageInput.value,
+        photo: photoInput.files[0],
+        createdAt: new Date().toISOString(),
+    }).then(() => {
+        console.log("Flyback postcard saved locally.");
+    }).catch((error) => {
+        console.error("Flyback postcard local save failed:", error);
+    });
 });
 
 enablePushButton.addEventListener("click", async () => {
@@ -142,7 +153,7 @@ enablePushButton.addEventListener("click", async () => {
 
         enablePushButton.hidden = true;
         testPushButton.hidden = false;
-        setPushStatus("알림 등록이 완료되었습니다.");
+        setPushStatus("FLYBACK READY · Flyback 알림 준비가 완료되었습니다.");
     } catch (error) {
         setPushStatus("알림 구독 등록에 실패했습니다.", true);
         console.error("Push subscription failed:", error);
@@ -161,7 +172,7 @@ testPushButton.addEventListener("click", async () => {
             throw new Error(`Push test failed: ${response.status} ${errorBody}`);
         }
 
-        setPushStatus("테스트 알림을 발송했습니다.");
+        setPushStatus("Flyback 미리 체험 알림을 발송했습니다.");
     } catch (error) {
         setPushStatus("서버 Push 발송에 실패했습니다.", true);
         console.error("Push test failed:", error);

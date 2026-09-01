@@ -8,16 +8,36 @@
     <link rel="manifest" href="{{ url_for('static', path='/manifest.webmanifest') }}">
 </head>
 <body class="postcard-page">
+    <header class="app-header">
+        <div class="app-header-inner">
+            <img class="brand-logo brand-logo-mobile" src="/static/images/kac-logo.png" alt="한국공항공사 KAC">
+            <p class="service-name">TIME CAPSULE FLYBACK</p>
+        </div>
+    </header>
+
+    <section class="postcard-visual" aria-labelledby="postcard-title">
+        <div class="postcard-visual-content">
+            <p class="visual-kicker">YOUR JOURNEY, YOUR MEMORY.</p>
+            <h1 id="postcard-title">여행의 순간을<br>남겨보세요</h1>
+        </div>
+    </section>
+
     <main class="postcard-shell">
         <header class="postcard-header">
-            <p class="eyebrow">TIME CAPSULE FLYBACK</p>
-            <h1>여행의 순간을 남겨보세요</h1>
+            <p class="section-kicker">CREATE YOUR MEMORY</p>
+            <h2>나만의 Flyback 엽서 만들기</h2>
             <p class="description">오늘의 여행을 한 장의 디지털 엽서에 담아보세요.</p>
         </header>
 
         <form class="postcard-form" id="postcard-form">
             <div class="form-field">
-                <label for="airport">이용 공항</label>
+                <div class="field-heading">
+                    <span class="field-step">STEP 01</span>
+                    <div>
+                        <label for="airport">AIRPORT</label>
+                        <p>이용 공항을 선택해주세요.</p>
+                    </div>
+                </div>
                 <select id="airport" required>
                     <option value="" selected disabled>공항을 선택하세요</option>
                     {% for airport in airports %}
@@ -27,38 +47,73 @@
             </div>
 
             <div class="form-field">
-                <label for="photo">여행 사진</label>
-                <input id="photo" type="file" accept="image/*" required>
-                <img class="photo-preview" id="photo-preview" src="" alt="선택한 여행 사진 미리보기">
+                <div class="field-heading">
+                    <span class="field-step">STEP 02</span>
+                    <div>
+                        <span class="field-label">PHOTO</span>
+                        <p>여행의 한 순간을 남겨주세요.</p>
+                    </div>
+                </div>
+                <div class="photo-upload">
+                    <input class="visually-hidden" id="photo" type="file" accept="image/*" required>
+                    <label class="photo-picker" for="photo">
+                        <span class="photo-picker-icon" aria-hidden="true">+</span>
+                        <strong>여행 사진 추가</strong>
+                        <small>오늘의 여행을 남겨보세요</small>
+                    </label>
+                    <img class="photo-preview" id="photo-preview" src="" alt="선택한 여행 사진 미리보기">
+                </div>
             </div>
 
             <div class="form-field">
-                <label for="message">메시지</label>
+                <div class="field-heading">
+                    <span class="field-step">STEP 03</span>
+                    <div>
+                        <label for="message">MESSAGE</label>
+                        <p>1년 뒤의 나에게 남길 메시지</p>
+                    </div>
+                </div>
                 <textarea id="message" maxlength="200" placeholder="1년 뒤의 나에게 메시지를 남겨보세요." required></textarea>
-                <p class="message-meta"><span id="message-count">0</span>/200</p>
+                <p class="message-meta"><span id="message-count">0</span> / 200</p>
             </div>
 
-            <button class="preview-button" type="submit">엽서 미리보기</button>
+            <button class="preview-button" type="submit">나의 Flyback 엽서 만들기</button>
         </form>
 
         <section class="postcard-result" id="postcard-result" aria-label="디지털 엽서 미리보기" hidden>
+            <div class="result-heading">
+                <p class="section-kicker">YOUR DIGITAL POSTCARD</p>
+                <h2>오늘의 여행이 엽서가 되었습니다.</h2>
+            </div>
             <article class="postcard-card">
-                <img id="card-photo" src="" alt="엽서에 담긴 여행 사진">
+                <div class="postcard-photo-frame">
+                    <img id="card-photo" src="" alt="엽서에 담긴 여행 사진">
+                </div>
                 <div class="postcard-card-content">
                     <p class="postcard-card-brand">TIME CAPSULE FLYBACK</p>
+                    <p class="postcard-airport-label">DEPARTURE AIRPORT</p>
                     <p class="postcard-card-airport" id="card-airport"></p>
                     <p class="postcard-card-message" id="card-message"></p>
+                    <div class="postcard-signature">
+                        <span>MEMORY FROM YOUR JOURNEY</span>
+                        <img src="/static/images/kac-logo.png" alt="한국공항공사 KAC">
+                    </div>
                 </div>
             </article>
 
             <div class="push-controls">
-                <button class="push-button" id="enable-push" type="button">1년 뒤 알림 받기</button>
+                <p class="field-step">STEP 04</p>
+                <h2>다음 여행에서<br>이 추억을 다시 만나보세요.</h2>
+                <p class="push-description">1년 뒤 새로운 공항에서 오늘의 여행을 다시 꺼내볼 수 있도록 Flyback 알림을 등록합니다.</p>
+                <button class="push-button" id="enable-push" type="button">1년 뒤 Flyback 알림 받기</button>
                 <p class="push-status" id="push-status" role="status" aria-live="polite"></p>
-                <button class="push-button push-button-secondary" id="test-push" type="button" hidden>12개월 후 알림 체험</button>
+                <button class="push-button push-button-secondary" id="test-push" type="button" hidden>1년 뒤 Flyback 미리 체험하기</button>
+                <p class="demo-mode"><strong>DEMO MODE</strong><br>실제 서비스의 12개월 후 알림을 즉시 체험합니다.</p>
             </div>
         </section>
     </main>
 
+    <script src="{{ url_for('static', path='/js/db.js') }}"></script>
     <script src="{{ url_for('static', path='/js/postcard.js') }}"></script>
 </body>
 </html>

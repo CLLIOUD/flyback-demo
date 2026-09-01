@@ -7,30 +7,70 @@
     <link rel="stylesheet" href="{{ url_for('static', path='/css/style.css') }}">
 </head>
 <body class="return-page">
+    <header class="app-header return-app-header">
+        <div class="app-header-inner">
+            <img class="brand-logo brand-logo-mobile" src="/static/images/kac-logo.png" alt="한국공항공사 KAC">
+            <p class="service-name">TIME CAPSULE FLYBACK</p>
+        </div>
+    </header>
+
     <main class="return-shell">
         <header class="return-header">
-            <p class="eyebrow">TIME CAPSULE FLYBACK</p>
-            <h1>당신의 추억이 다시 도착했습니다.</h1>
-            <p class="return-memory">작년 {{ airport }}에서 남긴 여행의 순간을 기억하시나요?</p>
-            <p class="description">새로운 지방공항에서<br>다음 여행을 이어가보세요.</p>
+            <div class="return-hero-content">
+                <p class="visual-kicker">WELCOME BACK</p>
+                <h1>당신의 추억이<br>다시 도착했습니다.</h1>
+                <p class="return-memory">작년 {{ airport }}에서 시작된 여행을 기억하시나요?</p>
+            </div>
         </header>
 
+        <section class="return-memory-section" aria-labelledby="return-memory-title">
+            <div class="result-heading">
+                <p class="section-kicker">YOUR MEMORY FROM LAST YEAR</p>
+                <h2 id="return-memory-title">1년 전, 이 기기에서 만든 Flyback 엽서</h2>
+            </div>
+
+            <p class="memory-loading" id="memory-loading">Flyback 엽서를 불러오고 있습니다.</p>
+            <p class="memory-empty" id="memory-empty" hidden>이 기기에서 이전 Flyback 엽서를 찾을 수 없습니다.</p>
+
+            <article class="postcard-card return-postcard-card" id="return-postcard-card" hidden>
+                <div class="postcard-photo-frame">
+                    <img id="return-card-photo" src="" alt="1년 전 Flyback 엽서의 여행 사진">
+                </div>
+                <div class="postcard-card-content">
+                    <p class="postcard-card-brand">TIME CAPSULE FLYBACK</p>
+                    <p class="postcard-airport-label">DEPARTURE AIRPORT</p>
+                    <p class="postcard-card-airport" id="return-card-airport"></p>
+                    <p class="postcard-card-message" id="return-card-message"></p>
+                    <div class="postcard-signature">
+                        <span>MEMORY FROM YOUR JOURNEY</span>
+                        <img src="/static/images/kac-logo.png" alt="한국공항공사 KAC">
+                    </div>
+                </div>
+            </article>
+        </section>
+
+        <section class="next-journey">
+            <p class="section-kicker">NEXT JOURNEY</p>
+            <h2>새로운 지방공항에서<br>다음 여행을 이어가보세요.</h2>
+        </section>
+
         <section class="promotion-card" aria-labelledby="promotion-title">
-            <p class="promotion-label">타 지방공항 입국 전용</p>
-            <h2 id="promotion-title">FLYBACK PROMOTION</h2>
+            <p class="promotion-label">FLYBACK BENEFIT</p>
+            <h2 id="promotion-title">타 지방공항 입국 전용</h2>
             <p class="promotion-code-label">프로모션 코드</p>
             <p class="promotion-code" id="promotion-code">{{ promo_code }}</p>
             <p class="promotion-description">
                 타 지방공항 이용 시 사용할 수 있는<br>
                 데모용 할인 프로모션 코드입니다.
             </p>
-            <button class="copy-button" id="copy-promotion-code" type="button">프로모션 코드 복사</button>
+            <button class="copy-button" id="copy-promotion-code" type="button">코드 복사</button>
             <p class="copy-status" id="copy-status" role="status" aria-live="polite"></p>
         </section>
 
-        <p class="demo-notice">본 화면의 프로모션 코드는 서비스 시연을 위한 데모 코드입니다.</p>
+        <p class="demo-notice">본 프로모션 코드는 서비스 시연을 위한 Demo Code입니다.</p>
     </main>
 
+    <script src="{{ url_for('static', path='/js/db.js') }}"></script>
     <script src="{{ url_for('static', path='/js/return.js') }}"></script>
 </body>
 </html>
