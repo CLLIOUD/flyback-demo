@@ -30,12 +30,13 @@ Service Worker + Web Push 알림 등록
 
 | 메인 이벤트 화면 | 모바일 엽서 제작 |
 | --- | --- |
-|<img width="2538" height="1419" alt="image" src="https://github.com/user-attachments/assets/e47b5878-72a7-4eb7-8cd7-46d5794474e7" />
-| ![모바일 디지털 엽서 화면](docs/postcard.png) |
+|<img width="2538" height="1419" alt="image" src="https://github.com/user-attachments/assets/e47b5878-72a7-4eb7-8cd7-46d5794474e7" />|
+|<img width="603" height="1311" alt="IMG_5403" src="https://github.com/user-attachments/assets/bc76c28e-dab4-47b6-8321-451604773bf0" />|
 
 | Web Push 알림 | 재방문 프로모션 화면 |
 | --- | --- |
-| ![스마트폰 Web Push 알림](docs/push.png) | ![재방문 프로모션 화면](docs/return.png) |
+|<img width="603" height="174" alt="IMG_5386" src="https://github.com/user-attachments/assets/99798a3e-fb53-4664-a7e9-5d02e76c8d9c" />|
+|<img width="603" height="1311" alt="IMG_5401" src="https://github.com/user-attachments/assets/58a2d245-9806-4228-b719-dd26ccd3aeed" />|
 
 > 이미지 파일은 추후 `docs/` 디렉터리에 추가할 수 있도록 경로만 지정되어 있습니다.
 
