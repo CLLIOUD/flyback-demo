@@ -1,0 +1,43 @@
+# Python virtual environments
+.venv/
+venv/
+env/
+
+# Python cache and build artifacts
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+build/
+dist/
+*.egg-info/
+
+# IDE settings
+.idea/
+.vscode/
+
+# Environment variables
+.env
+.env.*
+!.env.example
+
+# Private keys and credentials
+*.pem
+*.key
+*.p12
+*.pfx
+.vapid_private_key*
+vapid_private_key*
+credentials*.json
+client_secret*.json
+
+# Local service configuration and logs
+.cloudflared/
+*.log
+
+# Operating system files
+.DS_Store
+Thumbs.db
+Desktop.ini

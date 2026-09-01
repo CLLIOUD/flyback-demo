@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>추억이 도착했습니다 | Time Capsule Flyback</title>
+    <link rel="stylesheet" href="{{ url_for('static', path='/css/style.css') }}">
+</head>
+<body class="return-page">
+    <main class="return-shell">
+        <header class="return-header">
+            <p class="eyebrow">TIME CAPSULE FLYBACK</p>
+            <h1>당신의 추억이 다시 도착했습니다.</h1>
+            <p class="return-memory">작년 {{ airport }}에서 남긴 여행의 순간을 기억하시나요?</p>
+            <p class="description">새로운 지방공항에서<br>다음 여행을 이어가보세요.</p>
+        </header>
+
+        <section class="promotion-card" aria-labelledby="promotion-title">
+            <p class="promotion-label">타 지방공항 입국 전용</p>
+            <h2 id="promotion-title">FLYBACK PROMOTION</h2>
+            <p class="promotion-code-label">프로모션 코드</p>
+            <p class="promotion-code" id="promotion-code">{{ promo_code }}</p>
+            <p class="promotion-description">
+                타 지방공항 이용 시 사용할 수 있는<br>
+                데모용 할인 프로모션 코드입니다.
+            </p>
+            <button class="copy-button" id="copy-promotion-code" type="button">프로모션 코드 복사</button>
+            <p class="copy-status" id="copy-status" role="status" aria-live="polite"></p>
+        </section>
+
+        <p class="demo-notice">본 화면의 프로모션 코드는 서비스 시연을 위한 데모 코드입니다.</p>
+    </main>
+
+    <script src="{{ url_for('static', path='/js/return.js') }}"></script>
+</body>
+</html>

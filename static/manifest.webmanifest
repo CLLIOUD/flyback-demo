@@ -1,0 +1,10 @@
+{
+    "name": "Time Capsule Flyback",
+    "short_name": "Flyback",
+    "id": "/postcard",
+    "start_url": "/postcard",
+    "display": "standalone",
+    "background_color": "#ffffff",
+    "theme_color": "#1769aa",
+    "lang": "ko"
+}

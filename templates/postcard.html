@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>디지털 엽서 만들기 | Time Capsule Flyback</title>
+    <link rel="stylesheet" href="{{ url_for('static', path='/css/style.css') }}">
+    <link rel="manifest" href="{{ url_for('static', path='/manifest.webmanifest') }}">
+</head>
+<body class="postcard-page">
+    <main class="postcard-shell">
+        <header class="postcard-header">
+            <p class="eyebrow">TIME CAPSULE FLYBACK</p>
+            <h1>여행의 순간을 남겨보세요</h1>
+            <p class="description">오늘의 여행을 한 장의 디지털 엽서에 담아보세요.</p>
+        </header>
+
+        <form class="postcard-form" id="postcard-form">
+            <div class="form-field">
+                <label for="airport">이용 공항</label>
+                <select id="airport" required>
+                    <option value="" selected disabled>공항을 선택하세요</option>
+                    {% for airport in airports %}
+                    <option value="{{ airport }}">{{ airport }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+
+            <div class="form-field">
+                <label for="photo">여행 사진</label>
+                <input id="photo" type="file" accept="image/*" required>
+                <img class="photo-preview" id="photo-preview" src="" alt="선택한 여행 사진 미리보기">
+            </div>
+
+            <div class="form-field">
+                <label for="message">메시지</label>
+                <textarea id="message" maxlength="200" placeholder="1년 뒤의 나에게 메시지를 남겨보세요." required></textarea>
+                <p class="message-meta"><span id="message-count">0</span>/200</p>
+            </div>
+
+            <button class="preview-button" type="submit">엽서 미리보기</button>
+        </form>
+
+        <section class="postcard-result" id="postcard-result" aria-label="디지털 엽서 미리보기" hidden>
+            <article class="postcard-card">
+                <img id="card-photo" src="" alt="엽서에 담긴 여행 사진">
+                <div class="postcard-card-content">
+                    <p class="postcard-card-brand">TIME CAPSULE FLYBACK</p>
+                    <p class="postcard-card-airport" id="card-airport"></p>
+                    <p class="postcard-card-message" id="card-message"></p>
+                </div>
+            </article>
+
+            <div class="push-controls">
+                <button class="push-button" id="enable-push" type="button">1년 뒤 알림 받기</button>
+                <p class="push-status" id="push-status" role="status" aria-live="polite"></p>
+                <button class="push-button push-button-secondary" id="test-push" type="button" hidden>12개월 후 알림 체험</button>
+            </div>
+        </section>
+    </main>
+
+    <script src="{{ url_for('static', path='/js/postcard.js') }}"></script>
+</body>
+</html>
